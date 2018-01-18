@@ -1,6 +1,6 @@
 {
   "name": "map-state-vmodel",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "mapState for v-model",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wangdahoo/map-state-vmodel/issues"
   },
-  "homepage": "https://github.com/wangdahoo/map-state-vmodel#readme"
+  "homepage": "https://github.com/wangdahoo/map-state-vmodel#readme",
+  "dependencies": {
+    "object-assign": "^4.1.1"
+  }
 }

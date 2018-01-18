@@ -1,3 +1,5 @@
+const assign = require('object-assign')
+
 // someName => setSomeName
 const setterName = name => 'set' + name[0].toUpperCase() + name.slice(1)
 
@@ -23,7 +25,7 @@ const mapState = (namespace, name) => ({
 export const mapStateVModel = (namespace, names) => {
   return (Array.isArray(names) ? names : [names])
     .map(name => mapState(namespace, name))
-    .reduce((target, attr) => ({...target, ...attr}), {})
+    .reduce((target, attr) => assign(target, attr), {})
 }
 
 export const createSetters = state => {
