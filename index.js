@@ -22,7 +22,7 @@ export const mapStateVModel = (namespace, name) => ({
 
 export const createSetters = state => {
   const setters = {}
-  for (i in state) {
+  for (let i in state) {
     setters[setterName(i)] = (state, val) => {
       state[i] = val
     }
