@@ -1,12 +1,7 @@
 // someName => setSomeName
 const setterName = name => 'set' + name[0].toUpperCase() + name.slice(1)
 
-/**
- * mapState for v-model
- * @param {string} namespace 
- * @param {string} name 
- */
-export const mapStateVModel = (namespace, name) => ({
+const mapState = (namespace, name) => ({
   [name]: {
     get () {
       return namespace.split('/').reduce((result, name) => {
@@ -19,6 +14,17 @@ export const mapStateVModel = (namespace, name) => ({
     }
   }
 })
+
+/**
+ * mapState for v-model
+ * @param {string} namespace 
+ * @param {string} name 
+ */
+export const mapStateVModel = (namespace, names) => {
+  return (Array.isArray(names) ? names : [names])
+    .map(name => mapState(namespace, name))
+    .reduce((target, attr) => ({...target, ...attr}), {})
+}
 
 export const createSetters = state => {
   const setters = {}

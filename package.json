@@ -1,6 +1,6 @@
 {
   "name": "map-state-vmodel",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "mapState for v-model",
   "main": "index.js",
   "scripts": {
