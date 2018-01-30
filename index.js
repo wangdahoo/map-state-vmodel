@@ -22,13 +22,13 @@ const mapState = (namespace, name) => ({
  * @param {string} namespace 
  * @param {string} name 
  */
-export const mapStateVModel = (namespace, names) => {
+const mapStateVModel = (namespace, names) => {
   return (Array.isArray(names) ? names : [names])
     .map(name => mapState(namespace, name))
     .reduce((target, attr) => assign(target, attr), {})
 }
 
-export const createSetters = state => {
+const createSetters = state => {
   const setters = {}
   for (let i in state) {
     setters[setterName(i)] = (state, val) => {
@@ -37,4 +37,9 @@ export const createSetters = state => {
   }
 
   return setters
+}
+
+const MapStateVModel = {
+  mapStateVModel,
+  createSetters
 }
