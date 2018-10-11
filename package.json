@@ -1,10 +1,10 @@
 {
   "name": "map-state-vmodel",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "mapState for v-model",
   "main": "dist/index.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./examples/server.js",
     "build": "node ./build.js"
   },
   "repository": {
@@ -18,12 +18,22 @@
   },
   "homepage": "https://github.com/wangdahoo/map-state-vmodel#readme",
   "dependencies": {
-    "object-assign": "^4.1.1"
+    "babel-loader": "7"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "uglify-js": "^3.3.9",
-    "umd": "^3.0.1"
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.4",
+    "webpack": "^4.20.2"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "watch": [
+      "src/",
+      "examples/"
+    ],
+    "ext": "js,html"
   }
 }

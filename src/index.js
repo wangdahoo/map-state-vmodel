@@ -1,4 +1,4 @@
-const assign = require('object-assign')
+import assign from 'object-assign'
 
 // someName => setSomeName
 const setterName = name => 'set' + name[0].toUpperCase() + name.slice(1)
