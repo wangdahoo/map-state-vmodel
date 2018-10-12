@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import {mapStateVModel} from '../src/index'
+import {mapStateVModel} from 'map-state-vmodel'
 
 export default {
   computed: {

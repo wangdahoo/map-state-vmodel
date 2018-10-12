@@ -1,4 +1,4 @@
-import {createSetters} from '../../src/index.js'
+import {createSetters} from 'map-state-vmodel'
 
 const state = {
   userName: 'wangdahoo'
