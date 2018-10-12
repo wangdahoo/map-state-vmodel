@@ -48,7 +48,7 @@ const genMainScript = () => new Promise((resolve, reject) => {
     ],
     resolve: {
       alias: {
-        'map-state-vmodel': path.join(__dirname, './src/index.js')
+        'map-state-vmodel': path.join(__dirname, process.env.NODE_ENV === 'production' ? './dist/index.min.js' : './src/index.js')
       }
     }
   }, (err, stats) => {

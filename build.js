@@ -6,18 +6,6 @@ const uglify = require('uglify-js')
 const moment = require('moment')
 const pkg = require('./package.json')
 
-// const code = fs.readFileSync(path.join(__dirname, './src/index.js'))
-// const result = transform(code, {
-//   sourceType: 'script',
-//   presets: [
-//     ["env", {
-//       "targets": {
-//         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-//       }
-//     }]
-//   ]
-// })
-
 // banner
 const makeBanner = () => {
   return [
@@ -27,7 +15,6 @@ const makeBanner = () => {
     `${moment().format('YYYY-MM-DD HH:mm:ss')}\n */\n`,
   ].join('\n * ')
 }
-
 
 // uglify
 const writeStream = fs.createWriteStream('./dist/index.js')

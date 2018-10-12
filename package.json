@@ -5,6 +5,7 @@
   "main": "dist/index.min.js",
   "scripts": {
     "dev": "nodemon ./server.js",
+    "start": "NODE_ENV=production nodemon ./server.js",
     "build": "node ./build.js"
   },
   "repository": {
@@ -40,11 +41,10 @@
   },
   "nodemonConfig": {
     "verbose": true,
-    "watch": [
-      "src/",
-      "webapp/",
-      "server.js"
-    ],
-    "ext": "js,html,vue"
+    "ext": "js,html,vue",
+    "ignore": [
+      "node_module/",
+      "dist/"
+    ]
   }
 }
