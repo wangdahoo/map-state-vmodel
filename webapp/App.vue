@@ -10,6 +10,11 @@
     <div class="form-item">
       <label>password: </label> <input name="password" v-model="form.password" /> {{form.password}}
     </div>
+
+    <h4>example iii (nested form): </h4>
+    <div class="form-item">
+      <label>foo: </label> <input name="mobile" v-model="nestedForm.foo" /> {{nestedForm.foo}}
+    </div>
   </div>
 </template>
 <script>
@@ -19,7 +24,11 @@ export default {
   computed: {
     ...mapStateVModel('user', [
       'userName',
-      'form'
+      'form',
+    ]),
+
+    ...mapStateVModel('user/a/b', [
+      'nestedForm'
     ])
   }
 }
